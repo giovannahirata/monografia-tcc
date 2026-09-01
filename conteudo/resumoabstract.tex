@@ -4,42 +4,17 @@
 
 % As palavras-chave são obrigatórias, em português e em inglês, e devem ser
 % definidas antes do resumo/abstract. Acrescente quantas forem necessárias.
-\palavraschave{Palavra-chave1, Palavra-chave2, Palavra-chave3}
+\palavraschave{Segurança de redes, Detecção de intrusão, Protocolo DNS, Redes neurais, Domínios .br}
 
-\keywords{Keyword1,Keyword2,Keyword3}
+\keywords{Network security, Intrusion detection, DNS protocol, Neural networks, .br domains}
 
 % O resumo é obrigatório, em português e inglês. Estes comandos também
 % geram automaticamente a referência para o próprio documento, conforme
 % as normas sugeridas da USP.
 \resumo{
-Elemento obrigatório, constituído de uma sequência de frases concisas e
-objetivas, em forma de texto. Deve apresentar os objetivos, métodos empregados,
-resultados e conclusões. O resumo deve ser redigido em parágrafo único, conter
-no máximo 500 palavras e ser seguido dos termos representativos do conteúdo do
-trabalho (palavras-chave). Deve ser precedido da referência do documento.
-Texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto.
-Texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto.
+Diversos ciberataques realizados ao redor do mundo dependem do registro de nomes de domínio maliciosos para hospedar seus artefatos, como códigos de malware ou páginas de phishing. A existência desses domínios maliciosos é conhecida pela comunidade de segurança, porém, diversos domínios desse tipo são criados a cada segundo, tornando difícil a existência de uma base de dados consolidada e que possa ser consultada regularmente evitando que ataques tenham sucesso. Uma forma de detectar esses domínios antes de usuários os acessarem é por meio da captura do tráfego DNS e de sua classificação via aprendizado de máquina. Esta monografia apresenta o desenvolvimento de um sistema de detecção de intrusão (IDS) proativo baseado em redes neurais para a classificação de domínios maliciosos a partir do tráfego DNS. A metodologia investigou múltiplas fontes de dados e priorizou a especialização do modelo para o contexto brasileiro (domínios .br), incorporando, ainda, uma etapa de explicabilidade do modelo e a participação do público externo por meio de formulários para validação dos resultados. Como resultados práticos, os experimentos mostram que a etapa de explicabilidade é fundamental e que o modelo é capaz de detectar tráfego benigno com F1-Score médio de 0,95 e malicioso com F1-Score médio de 0,82, além de justificar a necessidade de um modelo baseado em redes neurais para a classificação de nomes de domínio na Internet por meio da participação do público externo. Além disso, como resultado direto do trabalho, publicou-se um artigo científico nos Anais Estendidos do XLIV Simpósio Brasileiro de Redes de Computadores e Sistemas Distribuídos (SBRC 2026), e todo o código desenvolvido foi disponibilizado como software livre em repositório público.
 }
 
 \abstract{
-Elemento obrigatório, elaborado com as mesmas características do resumo em
-língua portuguesa. De acordo com o Regimento da Pós-Graduação da USP (Artigo
-99), deve ser redigido em inglês para fins de divulgação. É uma boa ideia usar
-o sítio \url{www.grammarly.com} na preparação de textos em inglês.
-Text text text text text text text text text text text text text text text text
-text text text text text text text text text text text text text text text text
-text text text text text text text text text text text text text text text text
-text text text text text text text text text text text text.
-Text text text text text text text text text text text text text text text text
-text text text text text text text text text text text text text text text text
-text text text.
+Many cyberattacks worldwide rely on the registration of malicious domain names to host artifacts such as malware code or phishing pages. While the security community is aware of these malicious domains, new ones are created every second, making it difficult to maintain a consolidated, up-to-date database for real-time queries to prevent attacks. One way to detect these domains before users access them is by capturing DNS traffic and classifying it using machine learning. This monograph presents the development of a proactive, neural-network-based intrusion detection system (IDS) designed to classify malicious domains from DNS traffic. The methodology investigated multiple data sources and prioritized tailoring the model to the Brazilian context (.br domains); it also incorporated a model explainability phase and engaged the public through surveys to validate the results. Practical results demonstrate that the explainability phase is crucial and that the model achieves an average F1-Score of 0.95 for benign traffic and 0.82 for malicious traffic. Furthermore, the study justifies the need for a neural-network-based model for classifying Internet domain names while incorporating public participation. Additionally, a scientific paper resulting from this work was published in the Extended Proceedings of the XLIV Brazilian Symposium on Computer Networks and Distributed Systems (SBRC 2026), and all source code was made publicly available as open-source software in a public repository.
 }
