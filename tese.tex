@@ -275,12 +275,21 @@ texto texto texto texto. Texto opcional.
 \disablenewpage{\chapter*{Lista de abreviaturas}}
 
 \begin{tabular}{rl}
-   CFT & Transformada contínua de Fourier (\emph{Continuous Fourier Transform})\\
-   DFT & Transformada discreta de Fourier (\emph{Discrete Fourier Transform})\\
-  EIIP & Potencial de interação elétron-íon (\emph{Electron-Ion Interaction Potentials})\\
+  %  CFT & Transformada contínua de Fourier (\emph{Continuous Fourier Transform})\\
+  %  DFT & Transformada discreta de Fourier (\emph{Discrete Fourier Transform})\\
+  % EIIP & Potencial de interação elétron-íon (\emph{Electron-Ion Interaction Potentials})\\
   ABNT & Associação Brasileira de Normas Técnicas\\
-   URL & Localizador Uniforme de Recursos (\emph{Uniform Resource Locator})\\
+   CNN & Rede Neural Convolucional (\emph{Convolutional Neural Network})\\
+   DNS & Sistema de Nomes de Domínio (\emph{Domain Name System})\\
+   IDS & Sistema de Detecção de Intrusão (\emph{Intrusion Detection System})\\
    IME & Instituto de Matemática, Estatística e Ciência da Computação\\
+   KNN & K-vizinhos mais próximos (\emph{K-Nearest Neighbors})\\
+   LSTM & Memória de Longo Prazo (\emph{Long Short-Term Memory})\\
+   MLP & Perceptron Multicamadas (\emph{Multilayer Perceptron})\\
+   SVM & Máquina de Vetores de Suporte (\empty{Support Vector Machine})\\
+   TLD & Domínio de nível superior (\emph{Top Level Domain})\\
+   TTL & Tempo de Vida (\emph{Time to Live})\\
+   URL & Localizador Uniforme de Recursos (\emph{Uniform Resource Locator})\\
    USP & Universidade de São Paulo
 \end{tabular}
 
@@ -351,13 +360,15 @@ texto texto texto texto. Texto opcional.
 
 % A introdução não tem número de capítulo, então os cabeçalhos também não
 \pagestyle{unnumberedchapter}
-\input{conteudo/00-exemplo-introducao}
+\input{conteudo/00-introducao}
 \pagestyle{mainmatter}
-\input{conteudo/01-exemplo-normas-ime}
-\input{conteudo/02-exemplo-usando-o-modelo}
-\input{conteudo/03-exemplo-latex}
-\input{conteudo/04-exemplo-tutorial}
-\input{conteudo/05-exemplo-exemplos}
+\input{conteudo/01-conceitos-basicos}
+\input{conteudo/02-revisao-da-literatura}
+\input{conteudo/03-investigacao-de-datasets}
+\input{conteudo/04-modelo-desenvolvido}
+\input{conteudo/05-analise-resultados}
+\input{conteudo/06-comparacao-extensao}
+\input{conteudo/07-conclusoes}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% APÊNDICES E ANEXOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -395,7 +406,7 @@ texto texto texto texto. Texto opcional.
 % só há apêndices, sem anexos, provavelmente não é necessário.
 \addappheadtotoc
 
-\input{conteudo/apendice-exemplo-faq}
+\input{conteudo/apendice-formulario}
 \par
 
 %%%% Anexos %%%%
@@ -410,9 +421,9 @@ texto texto texto texto. Texto opcional.
 % só há anexos, sem apêndices, provavelmente não é necessário.
 \addappheadtotoc
 
-\input{conteudo/anexo-exemplo-imegoodies}
+% \input{conteudo/anexo-exemplo-imegoodies}
 \par
-\input{conteudo/anexo-exemplo-pseudocodigo}
+% \input{conteudo/anexo-exemplo-pseudocodigo}
 \par
 
 

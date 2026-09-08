@@ -19,101 +19,48 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global/global}
-    \entry{alon09:how}{article}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=a0026e806b0c3123f7fb978a2c810b66}{%
-           family={Alon},
+    \entry{hirata2026dns}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e43213f030498d8e8289969bbb489ca0}{%
+           family={Anjos},
            familyi={A\bibinitperiod},
-           given={Uri},
-           giveni={U\bibinitperiod},
+           given={Giovanna\bibnamedelimb Luisa\bibnamedelimb Hirata\bibnamedelima dos},
+           giveni={G\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim d\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=72089623914bdc19cba7593a1a3ead87}{%
+           family={Batista},
+           familyi={B\bibinitperiod},
+           given={Daniel\bibnamedelima Macêdo},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
            givenun=0}}%
       }
       \list{publisher}{1}{%
-        {Cell Press}%
+        {SBC}%
       }
-      \strng{namehash}{a0026e806b0c3123f7fb978a2c810b66}
-      \strng{fullhash}{a0026e806b0c3123f7fb978a2c810b66}
-      \strng{fullhashraw}{a0026e806b0c3123f7fb978a2c810b66}
-      \strng{bibnamehash}{a0026e806b0c3123f7fb978a2c810b66}
-      \strng{authorbibnamehash}{a0026e806b0c3123f7fb978a2c810b66}
-      \strng{authornamehash}{a0026e806b0c3123f7fb978a2c810b66}
-      \strng{authorfullhash}{a0026e806b0c3123f7fb978a2c810b66}
-      \strng{authorfullhashraw}{a0026e806b0c3123f7fb978a2c810b66}
-      \field{labelalpha}{Alo09}
+      \strng{namehash}{151b848fa700a4f23777cf498e70aa95}
+      \strng{fullhash}{151b848fa700a4f23777cf498e70aa95}
+      \strng{fullhashraw}{151b848fa700a4f23777cf498e70aa95}
+      \strng{bibnamehash}{151b848fa700a4f23777cf498e70aa95}
+      \strng{authorbibnamehash}{151b848fa700a4f23777cf498e70aa95}
+      \strng{authornamehash}{151b848fa700a4f23777cf498e70aa95}
+      \strng{authorfullhash}{151b848fa700a4f23777cf498e70aa95}
+      \strng{authorfullhashraw}{151b848fa700a4f23777cf498e70aa95}
+      \field{labelalpha}{AB26}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{1097-2765}
-      \field{journaltitle}{Molecular Cell}
-      \field{month}{9}
-      \field{number}{6}
-      \field{title}{How To Choose a Good Scientific Problem}
-      \field{volume}{35}
-      \field{year}{2009}
-      \field{pages}{726\bibrangedash 728}
-      \range{pages}{3}
-      \verb{doi}
-      \verb 10.1016/j.molcel.2009.09.013
+      \field{booktitle}{Anais Estendidos do XLIV Simpósio Brasileiro de Redes de Computadores e Sistemas Distribuídos (SBRC)}
+      \field{title}{Detecção de Intrusões em Tráfego DNS utilizando Redes Neurais e Explicabilidade}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://sol.sbc.org.br/index.php/sbrc_estendido/article/view/42613
       \endverb
-    \endentry
-    \entry{craftresearch}{book}{}{}
-      \name{author}{5}{}{%
-        {{un=0,uniquepart=base,hash=c5299d746281e198124e7f633e77959c}{%
-           family={Booth},
-           familyi={B\bibinitperiod},
-           given={Wayne\bibnamedelima C.},
-           giveni={W\bibinitperiod\bibinitdelim C\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=533ff2e4f7d14ed202c4633bc2048376}{%
-           family={Colomb},
-           familyi={C\bibinitperiod},
-           given={Gregory\bibnamedelima G.},
-           giveni={G\bibinitperiod\bibinitdelim G\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=445a20a00e1a62a06cc6c9167b244d1c}{%
-           family={Williams},
-           familyi={W\bibinitperiod},
-           given={Joseph\bibnamedelima M.},
-           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=a0239cb3c84f25f3ba6955a729e0f4d2}{%
-           family={Bizup},
-           familyi={B\bibinitperiod},
-           given={Joseph},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=9d559ba2d5e990ccf2be696ce85cc3fe}{%
-           family={FitzGerald},
-           familyi={F\bibinitperiod},
-           given={William\bibnamedelima T.},
-           giveni={W\bibinitperiod\bibinitdelim T\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{publisher}{1}{%
-        {The University of Chicago Press}%
-      }
-      \strng{namehash}{a402fbc81036bd429582b542edc2a85a}
-      \strng{fullhash}{82a23417f72bd7a3a9c138f55b2caa5d}
-      \strng{fullhashraw}{82a23417f72bd7a3a9c138f55b2caa5d}
-      \strng{bibnamehash}{82a23417f72bd7a3a9c138f55b2caa5d}
-      \strng{authorbibnamehash}{82a23417f72bd7a3a9c138f55b2caa5d}
-      \strng{authornamehash}{a402fbc81036bd429582b542edc2a85a}
-      \strng{authorfullhash}{82a23417f72bd7a3a9c138f55b2caa5d}
-      \strng{authorfullhashraw}{82a23417f72bd7a3a9c138f55b2caa5d}
-      \field{labelalpha}{Boo+24}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{5}
-      \field{isbn}{978-0226826677}
-      \field{title}{The Craft of Research}
-      \field{year}{2024}
+      \verb{url}
+      \verb https://sol.sbc.org.br/index.php/sbrc_estendido/article/view/42613
+      \endverb
     \endentry
     \entry{gridpat}{incollection}{}{}
       \name{author}{4}{}{%
@@ -195,44 +142,6 @@
       \field{subtitle}{Leveraging Distributed Processing Capabilities}
       \field{title}{The {Grid} architectural pattern}
       \field{year}{2006}
-    \endentry
-    \entry{carlis:09}{unpublished}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=26f6aed8b5e56320c9d2812be813b798}{%
-           family={Carlis},
-           familyi={C\bibinitperiod},
-           given={John\bibnamedelima V.},
-           giveni={J\bibinitperiod\bibinitdelim V\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{26f6aed8b5e56320c9d2812be813b798}
-      \strng{fullhash}{26f6aed8b5e56320c9d2812be813b798}
-      \strng{fullhashraw}{26f6aed8b5e56320c9d2812be813b798}
-      \strng{bibnamehash}{26f6aed8b5e56320c9d2812be813b798}
-      \strng{authorbibnamehash}{26f6aed8b5e56320c9d2812be813b798}
-      \strng{authornamehash}{26f6aed8b5e56320c9d2812be813b798}
-      \strng{authorfullhash}{26f6aed8b5e56320c9d2812be813b798}
-      \strng{authorfullhashraw}{26f6aed8b5e56320c9d2812be813b798}
-      \field{labelalpha}{Car09}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{10}
-      \field{title}{Design: The Key to Writing (and Advising) a One-Draft {Ph.D} Dissertation}
-      \field{urlday}{10}
-      \field{urlmonth}{11}
-      \field{urlyear}{2017}
-      \field{year}{2009}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb www-users.cs.umn.edu/~carlis/one-draft.pdf
-      \endverb
-      \verb{url}
-      \verb www-users.cs.umn.edu/~carlis/one-draft.pdf
-      \endverb
     \endentry
     \entry{curie}{thesis}{}{}
       \name{author}{1}{}{%
@@ -316,53 +225,74 @@
       \verb mirrors.ctan.org/macros/latex/contrib/natbib/natnotes.pdf
       \endverb
     \endentry
-    \entry{eco:09}{book}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=eeb9256075038567a106101346ca2995}{%
-           family={Eco},
+    \entry{daniel-privacidade}{inproceedings}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=15be144db41653ac84f126c34f04183a}{%
+           family={Elias},
            familyi={E\bibinitperiod},
-           given={Umberto},
-           giveni={U\bibinitperiod},
+           given={Erik\bibnamedelimb Miguel\bibnamedelima de},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim d\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9a14a111cc27f917987a75f067e2a74b}{%
+           family={Carriel},
+           familyi={C\bibinitperiod},
+           given={Vinicius\bibnamedelima Sanches},
+           giveni={V\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4ed76d68253272f39c0e311f10cfcacf}{%
+           family={De\bibnamedelima Oliveira},
+           familyi={D\bibinitperiod\bibinitdelim O\bibinitperiod},
+           given={Guilherme\bibnamedelima Werneck},
+           giveni={G\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e8d00e036b0d047ad34f0801e4e94e0f}{%
+           family={Dos\bibnamedelima Santos},
+           familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Aldri\bibnamedelima Luiz},
+           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=11b1349702dc5e348710329066330558}{%
+           family={Nogueira},
+           familyi={N\bibinitperiod},
+           given={Michele},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2a6c1b39c7e128ea83441e9d279fa465}{%
+           family={Junior},
+           familyi={J\bibinitperiod},
+           given={Roberto\bibnamedelima Hirata},
+           giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=72089623914bdc19cba7593a1a3ead87}{%
+           family={Batista},
+           familyi={B\bibinitperiod},
+           given={Daniel\bibnamedelima Macêdo},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
            givenun=0}}%
       }
-      \name{translator}{1}{}{%
-        {{hash=ce7a9b9b7ec25673a3b380acd872c47c}{%
-           family={Souza},
-           familyi={S\bibinitperiod},
-           given={Gilson\bibnamedelimb César\bibnamedelima Cardoso},
-           giveni={G\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim C\bibinitperiod},
-           prefix={de},
-           prefixi={d\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {São Paulo}%
-      }
-      \list{publisher}{1}{%
-        {Perspectiva}%
-      }
-      \strng{namehash}{eeb9256075038567a106101346ca2995}
-      \strng{fullhash}{eeb9256075038567a106101346ca2995}
-      \strng{fullhashraw}{eeb9256075038567a106101346ca2995}
-      \strng{bibnamehash}{eeb9256075038567a106101346ca2995}
-      \strng{authorbibnamehash}{eeb9256075038567a106101346ca2995}
-      \strng{authornamehash}{eeb9256075038567a106101346ca2995}
-      \strng{authorfullhash}{eeb9256075038567a106101346ca2995}
-      \strng{authorfullhashraw}{eeb9256075038567a106101346ca2995}
-      \strng{translatorbibnamehash}{ce7a9b9b7ec25673a3b380acd872c47c}
-      \strng{translatornamehash}{ce7a9b9b7ec25673a3b380acd872c47c}
-      \strng{translatorfullhash}{ce7a9b9b7ec25673a3b380acd872c47c}
-      \strng{translatorfullhashraw}{ce7a9b9b7ec25673a3b380acd872c47c}
-      \field{labelalpha}{Eco09}
+      \strng{namehash}{68a7561fee8ccbdbf3835a2d3a92a369}
+      \strng{fullhash}{34ef8870fb344807144cd0a0c26d7174}
+      \strng{fullhashraw}{34ef8870fb344807144cd0a0c26d7174}
+      \strng{bibnamehash}{68a7561fee8ccbdbf3835a2d3a92a369}
+      \strng{authorbibnamehash}{68a7561fee8ccbdbf3835a2d3a92a369}
+      \strng{authornamehash}{68a7561fee8ccbdbf3835a2d3a92a369}
+      \strng{authorfullhash}{34ef8870fb344807144cd0a0c26d7174}
+      \strng{authorfullhashraw}{34ef8870fb344807144cd0a0c26d7174}
+      \field{labelalpha}{Eli+22}
       \field{sortinit}{E}
       \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{22}
-      \field{isbn}{978-85-273-0079-7}
-      \field{title}{Como se Faz uma Tese}
-      \field{year}{2009}
+      \field{booktitle}{IEEE LATINCOM}
+      \field{title}{{A Hybrid CNN-LSTM Model for IIoT Edge Privacy-Aware Intrusion Detection}}
+      \field{year}{2022}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/LATINCOM56090.2022.10000468
+      \endverb
     \endentry
     \entry{FSF}{online}{}{}
       \name{shortauthor}{1}{}{%
@@ -395,80 +325,6 @@
       \verb{url}
       \verb www.gnu.org
       \endverb
-    \endentry
-    \entry{higham:19}{book}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=5bec9d02065c9b35d45c881a24f7a1cd}{%
-           family={Higham},
-           familyi={H\bibinitperiod},
-           given={Nicholas\bibnamedelima J.},
-           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{publisher}{1}{%
-        {SIAM: Society for Industrial and Applied Mathematics}%
-      }
-      \strng{namehash}{5bec9d02065c9b35d45c881a24f7a1cd}
-      \strng{fullhash}{5bec9d02065c9b35d45c881a24f7a1cd}
-      \strng{fullhashraw}{5bec9d02065c9b35d45c881a24f7a1cd}
-      \strng{bibnamehash}{5bec9d02065c9b35d45c881a24f7a1cd}
-      \strng{authorbibnamehash}{5bec9d02065c9b35d45c881a24f7a1cd}
-      \strng{authornamehash}{5bec9d02065c9b35d45c881a24f7a1cd}
-      \strng{authorfullhash}{5bec9d02065c9b35d45c881a24f7a1cd}
-      \strng{authorfullhashraw}{5bec9d02065c9b35d45c881a24f7a1cd}
-      \field{labelalpha}{Hig19}
-      \field{sortinit}{H}
-      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{3}
-      \field{isbn}{978-1611976090}
-      \field{month}{12}
-      \field{title}{Handbook of Writing for the Mathematical Sciences}
-      \field{year}{2019}
-    \endentry
-    \entry{dissertjourney}{book}{}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=c5c3dc598135d215b94f85517a7e961c}{%
-           family={Hyatt},
-           familyi={H\bibinitperiod},
-           given={Laura},
-           giveni={L\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=4c1e7c813255f6d1f7d0469a0a802a04}{%
-           family={Roberts},
-           familyi={R\bibinitperiod},
-           given={Carol\bibnamedelima M.},
-           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {Thousand Oaks, CA}%
-      }
-      \list{publisher}{1}{%
-        {Corwin Press}%
-      }
-      \strng{namehash}{8d931d22a6c908d2400e83f54bf24558}
-      \strng{fullhash}{8d931d22a6c908d2400e83f54bf24558}
-      \strng{fullhashraw}{8d931d22a6c908d2400e83f54bf24558}
-      \strng{bibnamehash}{8d931d22a6c908d2400e83f54bf24558}
-      \strng{authorbibnamehash}{8d931d22a6c908d2400e83f54bf24558}
-      \strng{authornamehash}{8d931d22a6c908d2400e83f54bf24558}
-      \strng{authorfullhash}{8d931d22a6c908d2400e83f54bf24558}
-      \strng{authorfullhashraw}{8d931d22a6c908d2400e83f54bf24558}
-      \field{labelalpha}{HR23}
-      \field{sortinit}{H}
-      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{4}
-      \field{isbn}{978-1071891285}
-      \field{title}{The Dissertation Journey}
-      \field{year}{2023}
     \endentry
     \entry{biblatex}{manual}{}{}
       \name{author}{3}{}{%
@@ -902,152 +758,6 @@
       \endverb
       \verb{url}
       \verb www.gnu.org/gnu/initial-announcement.en.html
-      \endverb
-    \endentry
-    \entry{tufte01:visualDisplay}{book}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=9bea1db9804038380420bc5c42741810}{%
-           family={Tufte},
-           familyi={T\bibinitperiod},
-           given={Edward},
-           giveni={E\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {Cheshire CT}%
-      }
-      \list{publisher}{1}{%
-        {Graphics Press}%
-      }
-      \strng{namehash}{9bea1db9804038380420bc5c42741810}
-      \strng{fullhash}{9bea1db9804038380420bc5c42741810}
-      \strng{fullhashraw}{9bea1db9804038380420bc5c42741810}
-      \strng{bibnamehash}{9bea1db9804038380420bc5c42741810}
-      \strng{authorbibnamehash}{9bea1db9804038380420bc5c42741810}
-      \strng{authornamehash}{9bea1db9804038380420bc5c42741810}
-      \strng{authorfullhash}{9bea1db9804038380420bc5c42741810}
-      \strng{authorfullhashraw}{9bea1db9804038380420bc5c42741810}
-      \field{labelalpha}{Tuf01}
-      \field{sortinit}{T}
-      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{2}
-      \field{isbn}{978-1930824133}
-      \field{month}{5}
-      \field{title}{The Visual Display of Quantitative Information}
-      \field{year}{2001}
-    \endentry
-    \entry{usp:guidelines}{manual}{}{}
-      \name{author}{1}{}{%
-        {{hash=2d98651d20f5146017c5c7991f627dd9}{%
-           family={{Universidade de São Paulo -- Sistema Integrado de Bibliotecas}},
-           familyi={U\bibinitperiod}}}%
-      }
-      \name{shortauthor}{1}{}{%
-        {{un=0,uniquepart=base,hash=b1b0048deb07d15eac19fd1fbe880d22}{%
-           family={SIBiUSP},
-           familyi={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{b1b0048deb07d15eac19fd1fbe880d22}
-      \strng{fullhash}{2d98651d20f5146017c5c7991f627dd9}
-      \strng{fullhashraw}{2d98651d20f5146017c5c7991f627dd9}
-      \strng{bibnamehash}{b1b0048deb07d15eac19fd1fbe880d22}
-      \strng{authorbibnamehash}{2d98651d20f5146017c5c7991f627dd9}
-      \strng{authornamehash}{2d98651d20f5146017c5c7991f627dd9}
-      \strng{authorfullhash}{2d98651d20f5146017c5c7991f627dd9}
-      \strng{authorfullhashraw}{2d98651d20f5146017c5c7991f627dd9}
-      \strng{shortauthorbibnamehash}{b1b0048deb07d15eac19fd1fbe880d22}
-      \strng{shortauthornamehash}{b1b0048deb07d15eac19fd1fbe880d22}
-      \strng{shortauthorfullhash}{b1b0048deb07d15eac19fd1fbe880d22}
-      \strng{shortauthorfullhashraw}{b1b0048deb07d15eac19fd1fbe880d22}
-      \field{labelalpha}{SIB16}
-      \field{sortinit}{U}
-      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{shortauthor}
-      \field{labeltitlesource}{title}
-      \field{title}{Diretrizes para Apresentação de Dissertações e Teses da {USP}: Documento Eletrônico e Impresso}
-      \field{urlday}{29}
-      \field{urlmonth}{1}
-      \field{urlyear}{2025}
-      \field{year}{2016}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb www.teses.usp.br/index.php?option=com_content&view=article&id=52&Itemid=67
-      \endverb
-      \verb{url}
-      \verb www.teses.usp.br/index.php?option=com_content&view=article&id=52&Itemid=67
-      \endverb
-    \endentry
-    \entry{waz:20}{book}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=dc1af39ebd63cfce0d09d596b4e2ffd8}{%
-           family={Wazlawick},
-           familyi={W\bibinitperiod},
-           given={Raul\bibnamedelima S.},
-           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{publisher}{1}{%
-        {GEN LTC}%
-      }
-      \strng{namehash}{dc1af39ebd63cfce0d09d596b4e2ffd8}
-      \strng{fullhash}{dc1af39ebd63cfce0d09d596b4e2ffd8}
-      \strng{fullhashraw}{dc1af39ebd63cfce0d09d596b4e2ffd8}
-      \strng{bibnamehash}{dc1af39ebd63cfce0d09d596b4e2ffd8}
-      \strng{authorbibnamehash}{dc1af39ebd63cfce0d09d596b4e2ffd8}
-      \strng{authornamehash}{dc1af39ebd63cfce0d09d596b4e2ffd8}
-      \strng{authorfullhash}{dc1af39ebd63cfce0d09d596b4e2ffd8}
-      \strng{authorfullhashraw}{dc1af39ebd63cfce0d09d596b4e2ffd8}
-      \field{labelalpha}{Waz20}
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{3}
-      \field{isbn}{978-8595151093}
-      \field{title}{Metodologia de Pesquisa para Ciência da Computação}
-      \field{year}{2020}
-    \endentry
-    \entry{zobel:14}{book}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=fec3a08fc98ee9b65f31e424408ed08f}{%
-           family={Zobel},
-           familyi={Z\bibinitperiod},
-           given={Justin},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{publisher}{1}{%
-        {Springer London}%
-      }
-      \strng{namehash}{fec3a08fc98ee9b65f31e424408ed08f}
-      \strng{fullhash}{fec3a08fc98ee9b65f31e424408ed08f}
-      \strng{fullhashraw}{fec3a08fc98ee9b65f31e424408ed08f}
-      \strng{bibnamehash}{fec3a08fc98ee9b65f31e424408ed08f}
-      \strng{authorbibnamehash}{fec3a08fc98ee9b65f31e424408ed08f}
-      \strng{authornamehash}{fec3a08fc98ee9b65f31e424408ed08f}
-      \strng{authorfullhash}{fec3a08fc98ee9b65f31e424408ed08f}
-      \strng{authorfullhashraw}{fec3a08fc98ee9b65f31e424408ed08f}
-      \field{labelalpha}{Zob14}
-      \field{sortinit}{Z}
-      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{3}
-      \field{isbn}{978-1-4471-6638-2}
-      \field{title}{Writing for Computer Science}
-      \field{year}{2014}
-      \verb{doi}
-      \verb 10.1007/978-1-4471-6639-9
       \endverb
     \endentry
   \enddatalist
