@@ -30,9 +30,11 @@ Este trabalho fez parte do  CPE SMARTNESS (FAPESP 21/00199-8) e foi, também, su
 
 \section**{Objetivos e Contribuições}
 
-O projeto teve como objetivo principal o desenvolvimento de um mecanismo de detecção de domínios maliciosos baseado em redes neurais, utilizando como entrada o tráfego do protocolo DNS, com foco na especialização do modelo para o contexto brasileiro (nomes de domínios terminados em .br), algo útil, por exemplo, para detectar antecipadamente casos como o que ocorreu com o Portal de Serviços da USP. 
+O projeto teve como objetivo principal o desenvolvimento de um mecanismo de detecção de domínios maliciosos baseado em redes neurais, utilizando como entrada o tráfego do protocolo DNS, com foco na especialização do modelo para o contexto brasileiro (nomes de domínios terminados em .br), algo útil, por exemplo, para detectar antecipadamente casos como o que ocorreu com o Portal de Serviços da USP. Como objetivos secundários também foram realizados: aplicação de \textit{feature engineering} por meio do estudo de explicabilidade e comparação do desempenho do mecanismo com outros modelos para classificação de tráfego.
 
-Como resultados diretos do trabalho, destacam-se:
+Resultados obtidos com a utilização do mecanismo na detecção de domínios maliciosos presentes no dataset BCCC-CIC-Bell-DNS-2024 \citep{dataset-site} \citep{SHAFI2024109436}, um dataset criado para modelar o perfil comportamental de diferentes atividades de DNS, mostraram que a etapa de explicabilidade foi fundamental para identificar \textit{features} irrelevantes, levando o modelo a detectar tráfego benigno com F1-Score médio de 0,95 e tráfego malicioso com F1-Score médio de 0,82.
+
+Entre outros resultados diretos do trabalho, destacam-se:
 \begin{itemize}
     \item a publicação do artigo científico intitulado \emph{Detecção de Intrusões em Tráfego DNS utilizando Redes Neurais e Explicabilidade} \citep{hirata2026dns} nos Anais Estendidos do XLIV Simpósio Brasileiro de Redes de Computadores e Sistemas Distribuídos (SBRC 2026);
     \item a disponibilização de todo o código desenvolvido como software livre no repositório (\url{https://github.com/giovannahirata/IDS-DNS}).
@@ -50,7 +52,7 @@ O retorno obtido orientou os ajustes na explicabilidade e engenharia de atributo
 
 O restante deste documento está estruturado de acordo com as etapas das atividades previstas no cronograma do plano de trabalho:
 \begin{itemize}
-    \item O \textbf{Capítulo~\ref{cap:conceitos-basicos}} demonstra a fundamentação teórica sobre o protocolo DNS e arquiteturas de redes neurais;
+    \item O \textbf{Capítulo~\ref{cap:conceitos-basicos}} fornece a fundamentação teórica sobre o protocolo DNS e arquiteturas de redes neurais;
     \item O \textbf{Capítulo~\ref{cap:revisao-literatura}} apresenta o levantamento bibliográfico atualizado; 
     \item O \textbf{Capítulo~\ref{cap:datasets}} descreve os conjuntos de dados investigados e os procedimentos de extração e tratamento dos fluxos de tráfego DNS;
     \item O \textbf{Capítulo~\ref{cap:modelo}} detalha a arquitetura do modelo neural proposto, o mecanismo de explicabilidade e a metodologia do eixo de extensão;

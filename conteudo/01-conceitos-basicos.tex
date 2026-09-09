@@ -1,2 +1,96 @@
 \chapter{Conceitos Básicos}
 \label{cap:conceitos-basicos}
+
+\section**{Fundamentação Teórica}
+
+\subsection**{DNS}
+\label{subsec:dns}
+
+O DNS (\textit{Domain Name System} - Sistema de Nome de Domínio) é um protocolo da camada de aplicação já que roda entre sistemas finais comunicantes usando o paradigma cliente-servidor, e consiste em um banco de dados distribuído executado em uma hierarquia de servidores de DNS. Ele é amplamente utilizado na Internet com o objetivo de transformar nomes em endereços IP e com o objetivo de encontrar os servidores de e-mail de um determinado domínio. Toda vez que alguém acessa um site por um nome, como \url{www.usp.br}. O servidor DNS configurado no dispositivo da pessoa é consultado para que esse nome seja convertido para um endereço IP e finalmente a conexão ocorra para esse endereço. De forma similar, toda vez que alguém envia um e-mail, por exemplo para \texttt{giovannaluisahirata@usp.br}, o servidor de e-mail da pessoa consulta o seu servidor DNS para descobrir qual é o computador responsável pelo domínio do email (no caso, \texttt{usp.br}) para que a mensagem seja enviada para esse computador.
+
+Por padrão, o protocolo DNS funciona na porta 53 utilizando o protocolo UDP. Este trabalho considera que dispositivos de uma rede seguem esse padrão. Mesmo em casos em que esse padrão não seja utilizado, por exemplo por meio do DNSCrypt (\url{https://dnscrypt.info/}), que criptografa o tráfego DNS, considera-se que o dispositivo do usuário é capaz de enviar os dados de acesso ao protocolo DNS de forma segura para um servidor central, confiável, que faria o treinamento e a inferência em cima desses dados.
+
+Segundo \citet{kuroseRoss}, em vista de que nenhum servidor DNS isolado tem todos os mapeamentos para todos os hospedeiros da Internet, o DNS usa um grande número de servidores, organizados de maneira hierárquica e distribuídos por todo o mundo, de forma a garantir escalabilidade.
+
+\indent Há três classes de servidores DNS, em ordem hierárquica:
+
+\begin{itemize}
+    \item Raiz: é o primeiro servidor ao qual o cliente contatará, que retornará endereços IP dos servidores TLD para o domínio de alto nível.
+    \item TLD: servidor responsável por domínios de alto nível (.com, .org, .edu, .gov, .uk, .br...) ao qual o cliente contatará após obter seu endereço IP do servidor raiz, e retornará o endereço IP de um servidor autoritativo para o nome do hospedeiro.
+    \item Autoritativo: servidor que abriga os registros DNS de mapeamento dos nomes de hospedeiros para endereços IP, e, enfim, retornará o endereço de IP para o nome de hospedeiro.
+\end{itemize}
+
+O DNS faz uso de cache a fim de melhorar o desempenho quanto ao tempo de resposta e ao número de mensagens DNS que dispara pela Internet. A ideia é que em uma cadeia de consultas, quando um servidor DNS recebe uma resposta, pode fazer cache dessas informações em sua memória local, assim, se um par nome de hospedeiro/endereço IP estiver no cache de um servidor DNS e outra consulta chegar ao mesmo servidor para o mesmo nome de hospedeiro, o servidor DNS poderá fornecer o endereço IP desejado, mesmo que não tenha autoridade para esse nome. Como hospedeiros e mapeamentos entre hospedeiros e endereços IP não são, de modo algum, permanentes, após um período de tempo, os servidores DNS descartam as informações armazenadas em seus caches.
+
+Os servidores DNS armazenam registros de recursos (RR) que fornecem mapeamentos de nomes de hospedeiros para endereços IP. Cada mensagem de resposta DNS carrega um ou mais registros de recursos que seguem a forma de uma tupla com quatro elementos:
+\begin{center}
+    (Name, Value, Type, TTL)
+\end{center}
+
+TTL é o tempo de vida útil do registro de recursos, isto é, determina quando um recurso deve ser removido de um cache.
+
+Os significados de Name e Value dependem de Type:
+\begin{itemize}
+    \item \textbf{Type=A}: Name é hospedeiro e Value é o endereço IP para o nome de hospedeiro;
+    \item \textbf{Type=NS}: Name é um domínio e Value é o nome de um servidor DNS autoritativo;
+    \item \textbf{Type=CNAME}: Value é um nome canônico de hospedeiro para o apelido de hospedeiro contido em Name;
+    \item \textbf{Type=MX}: Value é o nome canônico de um servidor de e-mail cujo apelido de hospedeiro está em Name;
+\end{itemize}
+
+Quanto às mensagens DNS, as duas únicas são mensagens de consulta e de resposta DNS, as quais possuem o mesmo formato seguindo a seguinte semântica para cada um dos campos:
+
+\begin{itemize}
+    \item \textbf{Seção cabeçalho}: 12 primeiros bytes, entre os quais contém o primeiro campo de 16 bits que identifica a consulta e, dessa forma, permite que o cliente combine respostas recebidas com consultas enviadas. Há várias \textit{flags} no campo \textit{flag}, dentre elas, uma \textit{flag} de consulta/resposta, uma de autoridade e uma de recursão. Há, ainda, um campo de recursão e quatro campos que indicam o número de ocorrências dos quatro tipos de seção de dados que se seguem ao cabeçalho.
+    \item \textbf{Seção pergunta}: contém informações sobre a consulta que está sendo feita, incluindo um campo de nome e um de tipo.
+    \item \textbf{Seção resposta}: contém os registros de recursos para o nome que foi consultado originalmente. Uma resposta pode retornar vários RRs.
+    \item \textbf{Seção de autoridade}: contém registros de outros servidores autoritativos.
+    \item \textbf{Seção adicional}: contém outros registros úteis.
+\end{itemize}
+
+O envio de mensagens de consulta DNS direto a algum servidor DNS pode ser feito pelo programa \texttt{nslookup} no shell do sistema operacional.
+
+Ao registrar um nome de domínio, uma entidade registradora verifica se o nome de domínio é exclusivo, e se o for, registra-o no banco de dados do DNS e cobra uma pequena taxa por seus serviços. Além do registro, é necessário informar os nomes e endereços IP dos servidores DNS com autoridade, primários e secundários. A entidade registradora fica encarregada de providenciar a inserção dos registros Type NS e Type A nos servidores TLD do domínio especificado. Além de registro de recurso Type A para o servidor Web e o registro de recurso Type MX para o servidor de correio.
+
+Foi acrescentada ao protocolo DNS uma opção UPDATE, que permite que os dados sejam dinamicamente acrescentados no banco de dados ou apagados deles por meio de mensagens DNS.
+
+A partir deste estudo foi possível obter uma compreensão do funcionamento do protocolo DNS, além de ter sido realizada uma captura de tráfego DNS utilizando o \textit{sniffer} \texttt{Wireshark} em computador rodando uma distribuição Linux a fim de ampliar esse conhecimento e entender como os domínios podem estar vulneráveis e serem usados como meios para realização de ataques cibernéticos através de estratégias diversas, como o \textit{typosquatting}, que pode variar a depender da linguagem local. Em vista disso, o foco do TCC foi mantido na classificação de domínios, em especial, domínios brasileiros, o que foi motivado, inclusive, pelo caso real do clone do Portal de Serviços da USP registrado sob o domínio \texttt{uspdigital.com.br} que ocorreu em 2025.
+
+\subsection**{Utilização de DNS na Propagação de Ataques}
+\label{subsec:dns+ataques}
+
+Três tipos de ataques principais podem utilizar o DNS como forma de se propagar: \textit{malware}, \textit{phishing} e \textit{spam}.
+
+No caso de \textit{malware}, a utilização do DNS pode ser utilizada para que o código malicioso seja copiado para o dispositivo alvo ou para que esse código malicioso possa realizar alguma ação solicitada pela pessoa que estiver controlando o ataque. É ainda possível que o DNS seja utilizado com esses dois objetivos. Inicialmente, por exemplo, por meio de um e-mail criado para enganar o(a) destinatário(a), ele(a) pode ser levado(a) a acreditar que está acessando um conteúdo legítimo, como uma nova versão de um determinado software, quando na verdade está fazendo o \textit{download} de um \textit{malware}. Isso pode ser realizado colocando o \textit{malware} em um site sob um nome de domínio similar ao nome de domínio real, como por exemplo \texttt{g00gle.com.br} ao invés de \texttt{google.com.br} (Essa ação de modificar partes do nome de domínio é chamada de \textit{typosquatting}~\citep{typosquatting}). No caso de controle do ataque, um dispositivo já infectado pode acessar o domínio de tempos em tempos para verificar qual ação realizar, no caso de uma infecção usada para Comando e Controle, algo comum em botnets~\citep{CommandAndControl}. Utilizando um nome de domínio, a pessoa que estiver atacando pode mudar o servidor para outro endereço IP e atualizar o mapeamento do nome para esse IP, sem necessidade de alterar os códigos dos dispositivos infectados.
+
+No caso de \textit{phishing}, o DNS é utilizado principalmente para a criação de um nome por meio de \textit{typosquatting}, em combinação com um clone da página original com o objetivo de obtenção das credenciais de algum usuário legítimo.
+
+No caso de \textit{spam}, o DNS é utilizado em conjunto com o protocolo SMTP para permitir que esse ataque seja realizado com os diversos propósitos para os quais \textit{spam} pode ser utilizado desde os primórdios da Internet~\citep{spam}.
+
+Este TCC foca nos casos de nomes de domínio criados para propagação de \textit{malware}, de \textit{phishing} e de \textit{spam}, i.e., um dispositivo acessará uma página hospedada sob um domínio malicioso criado para facilitar o trabalho do atacante ou para obter credenciais válidas de um site oficial. O objetivo do projeto é, observando o tráfego DNS, identificar que esse acesso é indevido e deve ser bloqueado.
+
+\subsection**{Detecção de Ciberataques via Aprendizado de Máquina}
+\label{subsec:deteccao}
+
+O aumento constante de ataques contra serviços na Internet tem tornado a detecção e a mitigação dos mesmos uma tarefa cada vez mais desafiadora. Procedimentos manuais ou procedimentos automatizados mas baseados em assinaturas têm se mostrado ineficazes.
+Por conta disso, IDS baseados em abordagens de Inteligência Artificial, principalmente aprendizado de máquina, que detectam anomalias têm sido cada vez mais presentes na literatura científica e mesmo em sistemas reais colocados em produção.
+
+Dentre as várias abordagens possíveis, o monitoramento dos pacotes de rede e a classificação do tráfego por meio de redes neurais têm mostrado resultados promissores para a detecção de ataques em diversas camadas da Internet e contra diversos ataques como ataques de negação de serviço distribuídos~\citep{daniel-privacidade}~\citep{daniel-rnn}. Os bons resultados alcançados com redes neurais em IDS justificam a sua utilização nesse projeto.
+
+\subsection**{Redes Neurais}
+\label{subsec:rede-neural}
+
+O estudo da teoria que fundamenta a escolha e o desenho de arquiteturas de redes neurais para problemas de classificação, bem como na revisão de trabalhos que reproduzem ou avaliam modelos de detecção de tráfego malicioso, serviram de embasamento para as decisões tomadas na etapa de criação do novo modelo (Capítulo~\ref{cap:modelo}).
+
+\subsubsection**{Escolha de arquiteturas de redes neurais}
+\label{subsec:arq-neural}
+
+O estudo de \citet{warrier2020} foi utilizado para compreender os critérios de escolha entre arquiteturas de redes neurais (DNN/MLP, CNN e RNN/LSTM) para problemas de classificação, no contexto original de classificação de modulação em sinais sem fio. O trabalho evidencia que modelos DNN/MLP são adequados quando as amostras podem ser tratadas como independentes e identicamente distribuídas (i.i.d.), CNNs são mais adequadas para a extração de características locais, e RNN/LSTM quando há dependência temporal entre amostras. A conclusão de que não existe uma arquitetura universalmente superior, mas sim a mais adequada ao modelo dos dados do problema, orientou a escolha de uma MLP como arquitetura de rede neural para a classificação do tráfego DNS deste projeto, já que as amostras de fluxo DNS do dataset utilizado podem ser tratadas de forma independente entre si.
+
+Complementarmente, \citet{sylligardos2023} propõe um pipeline de \textit{meta-learning} que trata a escolha do modelo de detecção de anomalias como um problema de classificação, evidenciando que nenhum modelo é soberano em todos os cenários e que a combinação de modelos (por votação majoritária) supera detectores individuais. Os estudos de \textit{Neural Architecture Search} (NAS) de \citet{ren2021} e de \citet{zoph2016} foram revisados como possíveis direções de automação da escolha e do ajuste de arquiteturas neurais, por meio de controladores e aprendizado por reforço, sendo registrados como uma direção viável para trabalhos futuros do projeto.
+
+\subsubsection**{Estudo e reprodução de modelos de detecção de intrusão}
+\label{subsec:modelo-ids}
+
+Para embasar teoricamente a construção do IDS proposto, foram estudados os trabalhos de revisão de \citet{liulang2019} e \citet{ahmad2021}. O primeiro propõe uma taxonomia de sistemas de detecção de intrusão (IDS) centrada nos dados, diferenciando detecção por assinatura (comparação com um banco de padrões de ataque conhecidos) de detecção por anomalia (desvio de um perfil de comportamento normal), bem como HIDS (\textit{host-based}) de NIDS (\textit{network-based}), além de relacionar tipos de dados de rede (pacotes, fluxos, sessões, logs) aos algoritmos de aprendizado mais adequados a cada um. O segundo, uma revisão sistemática de NIDS baseados em aprendizado de máquina e profundo entre 2017 e 2020, evidenciou uma transição tecnológica em direção ao uso predominante de aprendizado profundo e apontou desafios recorrentes na área, como o desbalanceamento de classes e a escassez de \textit{datasets} atuais, que se mostraram diretamente relevantes para as decisões metodológicas do projeto.
+
+A partir desse estudo teórico, foram reproduzidos, em caráter exploratório, modelos clássicos de aprendizado de máquina (SVM e KNN) e uma rede neural do tipo \textit{Multilayer Perceptron} (MLP) sobre o dataset escolhido, o que serviu de ponto de partida direto para a criação do modelo proposto, descrito no Capítulo~\ref{cap:modelo}.
