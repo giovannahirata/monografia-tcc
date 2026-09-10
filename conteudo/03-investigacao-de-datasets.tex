@@ -1,2 +1,18 @@
-\chapter{Investigação de Datasets}
+\chapter{Investigação de \textit{Datasets}}
 \label{cap:datasets}
+
+Foi realizada a análise exploratória de dados (\textit{Exploratory Data Analysis} (EDA)) sobre os \textit{datasets}
+CIC-Bell-DNS2021~\citep{cic-bell-dns-2021} e BCCC-CIC-Bell-DNS-2024~\citep{shafi2024dns}, ambos relatados nos trabalhos estudados durante a atividade de Atualização do levantamento bibliográfico. \todo{colocar referencia para os jupyter notebooks de eda criados para os datasets (tá no drive, mas passar para o repositorio); e trazer os resultados principais aqui (ou no apendice) apenas}
+
+Os dados foram explorados considerando-se os seguintes aspectos: entendimento inicial da estrutura do \textit{dataset}; análise estatística e visual de \textit{features} numéricas e categóricas; identificação de correlações e de \textit{outliers}; e exploração das relações entre variáveis numéricas e categóricas.
+
+Cada etapa realizada pode ser detalhada da seguinte forma:
+
+\begin{itemize}
+    \item Inspeção do Dataset: para o entendimento da estrutura do \textit{dataset}.
+    \item Análise de \textit{features} numéricas: o objetivo foi explorar estatísticas básicas e distribuição das variáveis numéricas, a fim de identificar padrões, escalas, correlações e possíveis anomalias nas variáveis numéricas. Além disso, visualizar as distribuições por meio de histogramas, \textit{boxplots}, etc.
+    \item Identificação de \textit{outliers}: busca de possíveis valores anômalos com potencial de afetar a modelagem.
+    \item Relações entre \textit{features} numéricas e categóricas: verificação de relações entre as \textit{features}, com gráficos \textit{boxplots} e \textit{violin plots}.
+\end{itemize}
+
+Com base nessa investigação, o dataset BCCC-CIC-Bell-DNS-2024 foi escolhido como base principal para a condução dos experimentos (Capítulo~\ref{cap:modelo}), por sua robustez, pela riqueza de \textit{features} (mais de 120, entre lexicais, estatísticas, de fluxo e de registros de recursos) e por abranger 3.595.920 amostras rotuladas em quatro categorias de tráfego DNS: benigno (95,678\%), malware (2,2720\%), phishing (1,2055\%) e spam (0,8446\%).
