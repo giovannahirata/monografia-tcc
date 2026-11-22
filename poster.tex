@@ -17,6 +17,8 @@
 
 \babeltags{br = brazilian, en = english}
 
+\definecolor{azulcabecalho}{HTML}{10335C}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INÍCIO DO POSTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -42,7 +44,7 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RODAPÉ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\posterbox[footerbox]{name=footerbox, above=bottom, column=1, span=12}{
+\posterbox[footerbox, colback=azulcabecalho, colframe=azulcabecalho]{name=footerbox, above=bottom, column=1, span=12}{
     \normalsize
     \textbf{Site:} \href{https://www.linux.ime.usp.br/~gihirata/mac0500/}{\texttt{linux.ime.usp.br/\textasciitilde{}gihirata/mac0500}}\par
     \vspace{2pt}
@@ -56,7 +58,7 @@
       \mbox{%
         \raisebox{-0.5\height}{\includegraphics[height=2.4cm]{logo-smartness}}%
         \hspace{0.6cm}%
-        \raisebox{-0.5\height}{\includegraphics[height=1.7cm]{fapesp-logo}}%
+        \raisebox{-0.5\height}{\includegraphics[height=1.7cm]{logo-fapesp}}%
         \hspace{0.6cm}%
         \raisebox{-0.5\height}{\includegraphics[height=2.7cm]{ime-logo}}%
         \hspace{0.6cm}%
@@ -142,7 +144,7 @@
 
     \begin{minipage}[c]{0.55\textwidth}
       \textbf{1) Balanceamento de classes (sem \texttt{src\_port}):}\\
-      {\footnotesize Como o dataset original tem 95,7\% de tráfego benigno, balanceou-se as classes (média de 10 execuções, divisão 70\% treino / 30\% teste) para evitar falsos negativos em ataques menos frequentes:}\\[5pt]
+      {\footnotesize Como o dataset original tem 95,7\% de tráfego benigno, balancearam-se as classes (média de 10 execuções, divisão 70\% treino / 30\% teste) para evitar falsos negativos em ataques menos frequentes:}\\[5pt]
       \resizebox{\linewidth}{!}{%
         \renewcommand{\arraystretch}{1.2}%
         \begin{tabular}{lccc}
