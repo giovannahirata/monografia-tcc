@@ -3,6 +3,15 @@
 
 Após a investigação do estado da arte em \textit{datasets} de tráfego DNS (Capítulo~\ref{cap:datasets}) e o estudo de redes neurais e de arquiteturas de IDS (Capítulos~\ref{cap:conceitos-basicos} e~\ref{cap:revisao-literatura}), o trabalho avançou para o desenvolvimento, treinamento e avaliação do modelo de classificação de tráfego DNS, cujos detalhes completos foram publicados no artigo~\citep{hirata2026dns} e cujo código está disponível no repositório do projeto\footnote{\url{https://github.com/giovannahirata/IDS-DNS}}.
 
+A Figura~\ref{fig:arquitetura-sistema} apresenta uma visão geral da arquitetura do sistema proposto, organizando o fluxo completo em três módulos: captura e pré-processamento de tráfego DNS, modelagem com redes neurais e explicabilidade (incluindo a validação social do eixo de extensão) e inferência voltada à mitigação.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figuras/arquitetura-sistema.png}
+\caption{Arquitetura geral do sistema de detecção de intrusões (IDS) em tráfego DNS, destacando os módulos de captura e pré-processamento, inteligência artificial e explicabilidade, e inferência e mitigação.}
+\label{fig:arquitetura-sistema}
+\end{figure}
+
 \section**{Metodologia}
 
 A metodologia empregada seguiu as seguintes etapas: (i) revisão da literatura; (ii) decisão do modelo/arquitetura; (iii) pré-processamento dos dados (tratamento de \textit{features} categóricas, normalização de \textit{features} numéricas e remoção de \textit{features} com baixa variância ou que funcionam como identificadores); (iv) definição dos parâmetros e estrutura dos modelos; (v) treinamento; (vi) avaliação por meio de métricas de acurácia, precisão, \textit{recall} e F1-\textit{score}; e (vii) interpretação dos resultados por meio da técnica de explicabilidade SHAP~\citep{lundberg2017}, que atribui a cada \textit{feature} um valor de contribuição para a decisão do modelo com base em teoria dos jogos, o que torna possível observar a contribuição de cada \textit{feature} para o modelo final decidir sobre o resultado mais provável. Para isso, o processo envolveu: treinar o modelo, usar a biblioteca SHAP para computar os valores SHAP, plotar esses valores e interpretar os resultados. Além disso, a biblioteca \textit{scikit-learn}~\citep{pedregosa2011} foi utilizada para os modelos clássicos, e a biblioteca TensorFlow~\citep{abadi2015} para a rede neural.
@@ -23,23 +32,25 @@ Para o SVM, foram comparados os \textit{kernels} linear e RBF, variando os parâ
 
 A Tabela~\ref{tab:resultados-original} resume as métricas obtidas por modelo no \textit{dataset} original (com todas as \textit{features}, incluindo \texttt{src\_port}):
 
-\begin{table}[h]
-    \centering
-    \scriptsize
-    \setlength{\tabcolsep}{3pt}
-    \begin{tabular}{|l|c|c|c|c|r|}
-    \hline
-    \textbf{Algoritmo} & \textbf{Configuração} & \textbf{Acurácia} & \textbf{Precisão} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
-        SVM (binário)& SVC(kernel='linear', C=1) & 0,9917 & \textbf{1,0000} & 0,8072 & 0,8933 \\ \hline
-        SVM (multiclasse)& SVC(kernel='rbf', C=10, gamma=0.01) & 0,8367 & 0,8394 & 0,8367 & 0,8266 \\ \hline
-        KNN (binário) & n\_neighbors=3 & 0,9979 & 0,9652 & \textbf{0,9867} & \textbf{0,9758} \\ \hline
-        KNN (multiclasse) & n\_neighbors=11 & 0,8925 & 0,8916 & 0,8925 & 0,8917 \\ \hline
-        MLP (binário) & activation=`sigmoid’,loss=`binary\_crossentropy' & \textbf{0,9993} & 0,8541 & 0,9761 & 0,9111 \\ \hline
-        MLP (multiclasse) & activation=`softmax’,loss=`sparse\_categorical\_crossentropy' & \textbf{0,9990} & \textbf{0,9993} & \textbf{0,9990} & \textbf{0,9991} 
-        \\ \hline
-    \end{tabular}
-    \caption{Parâmetros e métricas de desempenho dos modelos.}
-    \label{tab:resultados-original}
+\begin{table}[htbp]
+\centering
+\caption{Parâmetros e métricas de desempenho dos modelos.}
+\label{tab:resultados-original}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llcccc}
+\toprule
+\textbf{Algoritmo} & \textbf{Configuração} & \textbf{Acurácia} & \textbf{Precisão} & \textbf{Recall} & \textbf{F1-Score} \\
+\midrule
+SVM (binário)     & \texttt{SVC(kernel='linear', C=1)} & 0,9917 & \textbf{1,0000} & 0,8072 & 0,8933 \\
+SVM (multiclasse) & \texttt{SVC(kernel='rbf', C=10, gamma=0.01)} & 0,8367 & 0,8394 & 0,8367 & 0,8266 \\
+KNN (binário)     & \texttt{n\_neighbors=3} & 0,9979 & 0,9652 & \textbf{0,9867} & \textbf{0,9758} \\
+KNN (multiclasse) & \texttt{n\_neighbors=11} & 0,8925 & 0,8916 & 0,8925 & 0,8917 \\
+MLP (binário)     & \texttt{activation='sigmoid', loss='binary\_crossentropy'} & \textbf{0,9993} & 0,8541 & 0,9761 & 0,9111 \\
+MLP (multiclasse) & \texttt{activation='softmax', loss='sparse\_categorical\_crossentropy'} & \textbf{0,9990} & \textbf{0,9993} & \textbf{0,9990} & \textbf{0,9991} \\
+\bottomrule
+\end{tabular}%
+}
 \end{table}
 
 \section**{Descoberta de viés e engenharia de \textit{features}}
@@ -85,7 +96,7 @@ Os resultados mostram que SVM e KNN foram fortemente prejudicados pela remoção
 
 \section**{Balanceamento de classes}
 
-Como o \textit{dataset} é fortemente desbalanceado (mais de 95\% de amostras benignas), o que penaliza a detecção das classes minoritárias, especialmente \textit{spam}, foi conduzido um experimento de balanceamento: para cada uma das 10 repetições, foi selecionado aleatoriamente um subconjunto de amostras benignas de tamanho igual à soma de todas as amostras malignas (sem descartar nenhuma amostra maliciosa), seguido da divisão 70/30 entre treino e teste. As Tabelas~\ref{tab:mlp-bin-class} e ~\ref{tab:mlp-multi-class} apresentam o desempenho do modelo MLP, por classe, após treinamento (São apresentadas as médias das métricas e os desvios padrão considerando as 10 repetições). O modelo MLP multiclasse, treinado sobre o \textit{dataset} balanceado, obteve acurácia de 0,8819, precisão de 0,8808, recall de 0,8819, F1-\textit{score} de 0,8813 e AUC-ROC de 0,9792, com ganhos expressivos de recall para as classes minoritárias (malware, phishing e spam) em relação ao cenário desbalanceado, ao custo de uma acurácia geral mais baixa, o que consiste em uma troca considerada adequada para um sistema de detecção de intrusão, no qual minimizar falsos negativos é mais crítico do que maximizar a acurácia bruta. A Figura~\ref{fig:shap-balanceado} apresenta a importância das \textit{features} (SHAP) para esse modelo balanceado, mantendo o mesmo padrão observado na Figura~\ref{fig:shap-depois}, liderado por \texttt{character\_distribution}.
+Como o \textit{dataset} é fortemente desbalanceado (mais de 95\% de amostras benignas), o que penaliza a detecção das classes minoritárias, especialmente \textit{spam}, foi conduzido um experimento de balanceamento: para cada uma das 10 repetições, foi selecionado aleatoriamente um subconjunto de amostras benignas de tamanho igual à soma de todas as amostras malignas (sem descartar nenhuma amostra maliciosa), seguido da divisão 70/30 entre treino e teste. As Tabelas~\ref{tab:mlp-bin-class} e ~\ref{tab:mlp-multi-class} apresentam o desempenho do modelo MLP, por classe, após treinamento (são apresentadas as médias das métricas e os desvios padrão considerando as 10 repetições). O modelo MLP multiclasse, treinado sobre o \textit{dataset} balanceado, obteve acurácia de 0,8819, precisão de 0,8808, recall de 0,8819, F1-\textit{score} de 0,8813 e AUC-ROC de 0,9792, com ganhos expressivos de recall para as classes minoritárias (malware, phishing e spam) em relação ao cenário desbalanceado, ao custo de uma acurácia geral mais baixa, o que consiste em uma troca considerada adequada para um sistema de detecção de intrusão, no qual minimizar falsos negativos é mais crítico do que maximizar a acurácia bruta. A Figura~\ref{fig:shap-balanceado} apresenta a importância das \textit{features} (SHAP) para esse modelo balanceado, mantendo o mesmo padrão observado na Figura~\ref{fig:shap-depois}, liderado por \texttt{character\_distribution}.
 
 
 \begin{table}[H]
@@ -204,12 +215,12 @@ Esse experimento foi realizado sobre o conjunto de teste desbalanceado (126 amos
 \section**{Pipeline de integração para classificação em tempo real}
 \label{sec:pipeline}
 
-Como forma de aproximar o modelo desenvolvido de um cenário de uso real em produção, foi implementado um pipeline de integração que recebe um nome de domínio como entrada, realiza a captura do tráfego DNS real gerado por consultas a esse domínio, extrai as mesmas \textit{features} utilizadas no treinamento do modelo (estatísticas de TTL, tamanho e taxa de pacotes, características lexicais do nome de domínio, entre outras) e submete o vetor de \textit{features} resultante ao modelo MLP treinado, retornando a classificação do domínio (benigno ou malicioso). Esse pipeline corresponde à implementação prática dos itens 1 (captura do tráfego DNS) e 2 (classificação via aprendizado de máquina) do procedimento de mitigação descrito no artigo publicado~\citep{hirata2026dns}, faltando ainda, como trabalho futuro, a geração automática de regras de bloqueio em servidores DNS ou \textit{firewalls} a partir da classificação obtida (item 3 do procedimento).
+Como forma de aproximar o modelo desenvolvido de um cenário de uso real em produção, foi implementado um \textit{pipeline} de integração que concretiza o fluxo entre os módulos de captura, pré-processamento e inferência da arquitetura apresentada na Figura~\ref{fig:arquitetura-sistema}. Ele recebe um nome de domínio como entrada, realiza a captura do tráfego DNS real gerado por consultas a esse domínio, extrai as mesmas \textit{features} utilizadas no treinamento do modelo (estatísticas de TTL, tamanho e taxa de pacotes, características lexicais do nome de domínio, entre outras) e submete o vetor de \textit{features} resultante ao modelo MLP treinado, retornando a classificação do domínio (benigno ou malicioso). Esse \textit{pipeline} corresponde à implementação prática dos itens 1 (captura do tráfego DNS) e 2 (classificação via aprendizado de máquina) do procedimento de mitigação descrito no artigo publicado~\citep{hirata2026dns}, faltando ainda, como trabalho futuro, a geração automática de regras de bloqueio em servidores DNS ou \textit{firewalls} a partir da classificação obtida (item 3 do procedimento, representado pelo bloco de mitigação automática na mesma figura).
 
 \section**{Metodologia do eixo de extensão}
 \label{sec:metodologia-extensao}
 
-Além da avaliação por métricas de classificação, o trabalho incluiu uma etapa de validação social junto a um público externo, conforme descrito no eixo de extensão da Introdução. O objetivo foi observar, em condições idênticas, como pessoas sem formação em Tecnologia da Informação julgam a legitimidade de nomes de domínio, e comparar esse julgamento com o de um especialista em segurança da informação e com a classificação feita pelo modelo desenvolvido. Os resultados dessa comparação são apresentados no Capítulo~\ref{cap:resultados-extensao}.
+Além da avaliação por métricas de classificação, o trabalho incluiu uma etapa de validação social junto a um público externo, conforme descrito no eixo de extensão da Introdução e representada pelo bloco de \textit{Validação Social e Feedback} na Figura~\ref{fig:arquitetura-sistema}. O objetivo foi observar, em condições idênticas, como pessoas sem formação em Tecnologia da Informação julgam a legitimidade de nomes de domínio, e comparar esse julgamento com o de um especialista em segurança da informação e com a classificação feita pelo modelo desenvolvido. Os resultados dessa comparação são apresentados no Capítulo~\ref{cap:resultados-extensao}.
 
 O instrumento de coleta foi um formulário na plataforma Google Forms, intitulado ``Avaliação de domínios'' e documentado na íntegra no Apêndice~\ref{ap:formulario}. O enunciado perguntava se o participante acessaria cada um dos links listados ao navegar pela internet ou pelas suas redes sociais, com resposta exclusiva ``Sim'' (acessaria com confiança) ou ``Não'' (desconfiou do domínio ou não o acessaria). Apenas o nome de domínio era apresentado, sem o conteúdo da página, sem informações de registro e sem qualquer indicação de risco, de modo que a decisão dependesse somente da aparência do nome.
 
